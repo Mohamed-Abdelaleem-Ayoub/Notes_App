@@ -10,10 +10,26 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return CustomModelSheet();
+            },
+          );
+        },
         child: Icon(Icons.add),
       ),
       body: Column(children: [CustomAppBar(), NotesListView()]),
     );
+  }
+}
+
+class CustomModelSheet extends StatelessWidget {
+  const CustomModelSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
